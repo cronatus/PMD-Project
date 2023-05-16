@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="JS/Diary1.js"></script>
+    <style>
+        p.container1 {
+            text-align: center;
+        }
+    </style>
+    <title></title>
+
+</head>
+<body >
+
+    <div data-role="page" id="home" data-theme="b">
+
+        <div data-role="header">
+            <h1 id="userpresent">Student Diary App</h1>
+        </div>
+
+        <div data-role="content">
+
+            <p id="welcome">Welcome, This application has been designed for you to keep track of your appointments.</p>
+
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#display" >Diary</a></li>
+                <li><a href="#add" >Add </a></li>
+            </ul>
+
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar"><ul>
+                <li><a href="#userchange">change user</a></li>
+            </ul></div>
+            <p class="container1">©MWilliams V1.0</p>
+        </div>
+    </div>
+
+    <div data-role="page" id="display" data-theme="b">
+
+        <div data-role="header">
+            <h1></h1>
+            <a href="#home" data-icon="back" data-iconpos="notext"></a>
+        </div>
+
+        <div data-role="content">
+
+            <ul id="subjectlist" data-role="listview" data-inset="true">
+            </ul>
+
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar"><ul>
+                <li><a href="#home" onclick="deletecomplete()">delete completed items</a></li>
+            </ul></div>
+        </div>
+
+    </div>
+
+    <div data-role="page" id="add" data-theme="b">
+
+        <div data-role="header">
+            <h1></h1>
+            <a href="#home" data-icon="back" data-iconpos="notext"></a>
+        </div>
+
+        <div data-role="content">
+
+            <input type="text" id="addsubject" placeholder="subject">
+            <textarea placeholder="description" id="adddescript"></textarea>
+            <input type="date" id="adddate" >
+            <input type="time" id="addtime" >
+            <button id="submit" type="button" onclick="addnew()">Submit</button>
+
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar"><ul>
+                <li><a href="#" data-icon="star" data-iconppos="notext"></a></li>
+            </ul></div>
+        </div>
+    </div>
+
+    <div data-role="page" id="placeholder" data-theme="b">
+
+        <div data-role="header">
+            <a href="#" data-rel="back" data-icon="back" data-iconpos="notext"></a>
+            <h1 id="subjectheader">Terrys Birthday</h1>
+        </div>
+
+        <div data-role="content">
+
+            <p id="itemdescript">Description:<br></p>
+            <p id="itemdate">Date:<br></p>
+            <p id="itemtime">Time:<br></p>
+            <p id="itemcomplete">complete:<br></p>
+            <p>
+                description:<br> <b>Remember to bring the present, at his house</b><br>
+                date:<br> <b>12/12/12</b><br>
+                time:<br> <b>12:30</b><br>
+                complete: <b>No</b>
+            </p>
+
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" id="completebar"><ul>
+            </ul></div>
+        </div>
+    </div>
+
+
+    <div data-role="page" id="userchange" data-theme="b">
+
+        <div data-role="header">
+            <h1></h1>
+            <a id="userhome" href="#home" data-rel="back" data-icon="back" data-iconpos="notext"></a>
+        </div>
+
+        <div data-role="content">
+            <p> Username:</p>
+            <input type="text" id="userreset" placeholder="username" value="">
+            <button id="resetuser" type="button" onclick="setuser2()">Set</button>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar"><ul>
+                <li><a href="#" data-icon="star" data-iconppos="notext"></a></li>
+            </ul></div>
+        </div>
+    </div>
+
+</body>
+</html>
